@@ -1,0 +1,15 @@
+;;支持w3m
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/w3m-master") 
+(require 'w3m)
+(setq w3m-home-page "https://www.baidu.com") ;设置主页 
+;(require 'mime-w3m) 
+;设置显示图片
+(setq w3m-default-display-inline-images t)
+(setq w3m-default-toggle-inline-images t)
+;;显示图标  
+(setq w3m-show-graphic-icons-in-header-line t) 
+(setq w3m-show-graphic-icons-in-mode-line t)
+;;启用cookie  
+(setq w3m-use-cookies t)
+;设定w3m运行的参数，分别为使用cookie和使用框架 
+(setq w3m-command-arguments '("-cookie" "-F"))
