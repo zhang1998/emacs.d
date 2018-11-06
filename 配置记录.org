@@ -1,0 +1,2 @@
+不输入sudo  进入shell一篇空白
+输入sudo 进入shell出现
