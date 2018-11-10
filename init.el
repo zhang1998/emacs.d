@@ -1,3 +1,15 @@
+
+
+;;修改：eww搜索引擎
+(setq eww-search-prefix "https://www.baidu.com/")
+
+
+
+
+
+
+
+
 ;;支持w3m
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/w3m-master") 
 (require 'w3m)
@@ -76,4 +88,4 @@ process
 ;;start stardict
 
 (require 'stardict)
-(global-set-key (kbd "C-c-d") 'view-stardict-in-buffer)
+(global-set-key (kbd "C-c C-d") 'view-stardict-in-buffer)
