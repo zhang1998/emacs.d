@@ -9,6 +9,12 @@
 
 
 
+;;; 我的添加，为运行成功
+ ;;; Standard package repositories
+(add-to-list 'package-archives
+'("popkit" . "https://elpa.popkit.org/packages/"))
+
+
 ;;; Standard package repositories
 
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -23,11 +29,6 @@
     (unless no-ssl
       ;; Force SSL for GNU ELPA
       (setcdr (assoc "gnu" package-archives) "https://elpa.gnu.org/packages/"))))
-
-;; We include the org repository for completeness, but don't normally
-;; use it.
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-
 
 
 ;;; On-demand installation of packages

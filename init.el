@@ -1,6 +1,33 @@
 ;; -*- lexical-binding: t -*-
 (setq debug-on-error t)
 
+;;;为了成功安装进行了尝试
+ ;;; Standard package repositories
+
+;;;修改emacsw3m主页问题
+(setq w3m-home-page "https://cn.bing.com/")
+
+
+
+
+;;; 我的关于主题部分
+(defun synchronize-theme () 
+  (setq hour 
+	(string-to-number 
+	  (substring (current-time-string) 11 13))) ;;closes (setq hour... 
+  (if (member hour (number-sequence 6 17)) 
+    (setq now '(sanityinc-tomorrow-day)) 
+    (setq now '(sanityinc-tomorrow-bright))) ;; end of (if ... 
+  (if (eq now custom-enabled-themes) 
+    nil 
+    (setq custom-enabled-themes now) 
+    (reapply-themes) ) ) ;; end of (defun ... 
+(run-with-timer 0 3600 'synchronize-theme)
+
+
+
+
+
 ;;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
 
