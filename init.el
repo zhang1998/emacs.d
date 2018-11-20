@@ -6,6 +6,7 @@
 
 ;;;修改emacsw3m主页问题
 (setq w3m-home-page "https://cn.bing.com/")
+(setq w3m-search-default-engine "bing")
 
 
 
