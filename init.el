@@ -218,6 +218,9 @@
 
 (provide 'init)
 
+
+;;add indent
+(setq org-startup-indented t)
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
