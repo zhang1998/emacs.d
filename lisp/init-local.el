@@ -27,5 +27,6 @@
 )
 ;;add indent
 (setq org-startup-indented t)
-
+;;设置主题
+(load-theme 'tangotango t)
 (provide 'init-local)
