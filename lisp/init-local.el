@@ -6,7 +6,9 @@
 
     ;;(reapply-themes) ) ) ;; end of (defun ...
 ;;(run-with-timer 0 3600 'synchronize-theme)
+;;添加python virtualenv位置
 
+(setq venv-location "~/note/python/env3.3.6")
 ;;添加英语单词服务
 
 (global-set-key (kbd "C-c s") 'kid-sdcv-to-buffer) 
