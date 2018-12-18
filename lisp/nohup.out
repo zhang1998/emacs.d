@@ -1,0 +1,4 @@
+
+(gedit:5761): Gtk-WARNING **: Attempting to read the recently used resources file at '/home/work/.local/share/recently-used.xbel', but the parser failed: 打开文件“/home/work/.local/share/recently-used.xbel”失败：权限不够.
+
+(gedit:5761): Gtk-WARNING **: Calling Inhibit failed: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.gnome.SessionManager was not provided by any .service files
