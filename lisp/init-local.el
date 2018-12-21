@@ -1,4 +1,7 @@
 ;;;... your code here ...
+;;;显示行号
+;(global-linum-mode t)
+;(linum-mode t) 
 
 ;;;修改emacsw3m主页问题
 (setq w3m-home-page "https://cn.bing.com/")
