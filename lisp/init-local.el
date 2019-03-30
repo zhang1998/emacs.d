@@ -1,14 +1,33 @@
-﻿;;;... your code here ...
+﻿;解决ctrl-spacE与系统输入法的冲突问题
+(global-unset-key (kbd "C-SPC"))  
+(global-set-key (kbd "M-SPC") 'set-mark-command)  
+
+;编码
+;;设置默认读入文件编码
+
+(prefer-coding-system 'utf-8)
+
+;;设置写入文件编码
+
+(setq default-buffer-file-coding-system 'utf-8)
+;;;... your code here ...
 
 ;;;修改emacsw3m主页问题
+
 (setq w3m-home-page "https://cn.bing.com/")
+
 (setq w3m-search-default-engine "bing")
 
-    ;;(reapply-themes) ) ) ;; end of (defun ...
+    
+;;(reapply-themes) ) ) 
+;; end of (defun ...
+
 ;;(run-with-timer 0 3600 'synchronize-theme)
+
 ;;添加python virtualenv位置
 
 (setq venv-location "~/note/python/env3.3.6")
+
 ;;添加英语单词服务
 
 (global-set-key (kbd "C-c s") 'kid-sdcv-to-buffer) 
