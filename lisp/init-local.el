@@ -1,4 +1,7 @@
-﻿;解决ctrl-spacE与系统输入法的冲突问题
+﻿;解决插入日期的乱码问题
+(setq system-time-locale "C")
+
+;解决ctrl-spacE与系统输入法的冲突问题
 (global-unset-key (kbd "C-SPC"))  
 (global-set-key (kbd "M-SPC") 'set-mark-command)  
 
