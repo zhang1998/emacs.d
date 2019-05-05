@@ -1,3 +1,5 @@
+;;修改议程文件位置，实现议程的自动同步
+
 ;;;... your code here ...
 ;;;显示行号
 ;(global-linum-mode t)
