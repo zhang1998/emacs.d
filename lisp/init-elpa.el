@@ -1,4 +1,4 @@
-(require 'package)
+﻿(require 'package)
 
 
 ;;; Install into separate package dirs for each Emacs version, to prevent bytecode incompatibility
@@ -11,9 +11,12 @@
 
 ;;; 我的添加，为运行成功
  ;;; Standard package repositories
-(add-to-list 'package-archives
-'("popkit" . "https://elpa.popkit.org/packages/"))
+;;;(add-to-list 'package-archives
+;;;'("popkit" . "https://elpa.popkit.org/packages/"))
 
+(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+(package-initialize) ;; You might already have this line
 
 ;;; Standard package repositories
 

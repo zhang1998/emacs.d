@@ -79,7 +79,7 @@
 ;;add indent
 (setq org-startup-indented t)
 ;;设置主题
-(load-theme 'tangotango t)
+(load-theme 'wheatgrass t)
 (provide 'init-local)
 
 (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
