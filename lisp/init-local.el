@@ -1,9 +1,30 @@
+;; 测试宏：用于建立新的agandaview
+(find-file "/home/work/programme/lisp目标文件.org")
 ;;修改议程文件位置，实现议程的自动同步
+
+;;添加时间插入
+(global-set-key (kbd "C-c t") 'org-time-stamp-inactive) 
+
+
+;;;测试linux下打开外部链接
+
+(eval-after-load "org"
+  '(progn
+     ;; .txt files aren't in the list initially, but in case that changes
+     ;; in a future version of org, use if to avoid errors
+     (if (assoc "\\.pdf\\'" org-file-apps)
+         (setcdr (assoc "\\.pdf\\'" org-file-apps) "okular %s")
+       (add-to-list 'org-file-apps '("\\.pdf\\'" . "okular %s") t))
+     ;; Change .pdf association directly within the alist
+     ))
+;;; 添加捕获的默认文件位置
+
+(setq org-default-notes-file "~/temporary.org")
 
 ;;;... your code here ...
 ;;;显示行号
-;(global-linum-mode t)
-;(linum-mode t) 
+;;;                                        ;(global-linum-mode t)
+;;;                                        ;(linum-mode t) 
 
 ;;;修改emacsw3m主页问题
 (setq w3m-home-page "https://cn.bing.com/")
