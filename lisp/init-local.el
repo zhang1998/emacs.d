@@ -1,5 +1,5 @@
 ;;添加新的内容：测试头文件补全 
-(add-to-list 'company-backends 'company-c-headers)
+;;(add-to-list 'company-backends 'company-c-headers)
 
 ;;看一看补全的语句管不管用
 ;;(require 'auto-complete-config) 没什么用处 不折腾了
