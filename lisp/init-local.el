@@ -1,3 +1,7 @@
+
+;;看一看补全的语句管不管用
+;;(require 'auto-complete-config) 没什么用处 不折腾了
+
 ;; 测试宏：用于建立新的agandaview
 (find-file "/home/work/programme/lisp目标文件.org")
 ;;修改议程文件位置，实现议程的自动同步
