@@ -35,8 +35,14 @@
 ;;;修改emacsw3m主页问题
 (setq w3m-home-page "https://cn.bing.com/")
 (setq w3m-search-default-engine "bing")
+;;;修改eww默认搜索引擎的问题
 
-    ;;(reapply-themes) ) ) ;; end of (defun ...
+(setq eww-search-prefix  "https://cn.bing.com/search?q=")
+
+;;dddd
+
+
+;;(reapply-themes) ) ) ;; end of (defun ...
 ;;(run-with-timer 0 3600 'synchronize-theme)
 ;;添加python virtualenv位置
 
