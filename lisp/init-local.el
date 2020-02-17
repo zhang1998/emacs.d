@@ -1,4 +1,9 @@
-;;添加新的内容：测试头文件补全 
+;;;  Code:
+(add-hook 'c++-mode-hook
+          (lambda () (setq flycheck-clang-include-path
+                      (list (expand-file-name "~/local/include/")))))
+
+
 ;;(add-to-list 'company-backends 'company-c-headers)
 
 ;;看一看补全的语句管不管用
@@ -9,8 +14,7 @@
 ;;修改议程文件位置，实现议程的自动同步
 
 ;;添加时间插入
-(global-set-key (kbd "C-c t") 'org-time-stamp-inactive) 
-
+(global-set-key (kbd "C-c t") 'org-time-stamp-inactive)
 
 ;;;测试linux下打开外部链接
 
@@ -30,7 +34,7 @@
 ;;;... your code here ...
 ;;;显示行号
 ;;;                                        ;(global-linum-mode t)
-;;;                                        ;(linum-mode t) 
+;;;                                        ;(linum-mode t)
 
 ;;;修改emacsw3m主页问题
 (setq w3m-home-page "https://cn.bing.com/")
@@ -49,32 +53,32 @@
 (setq venv-location "~/programme/env/env2")
 ;;添加英语单词服务
 
-(global-set-key (kbd "C-c s") 'kid-sdcv-to-buffer) 
-(defun kid-sdcv-to-buffer () 
-  (interactive) 
-  (let ((word (if mark-active 
-		(buffer-substring-no-properties (region-beginning) (region-end)) 
-		(current-word nil t)))) 
-    (setq word (read-string (format "Search the dictionary for (default %s): " word) 
-			    nil nil word)) 
-    (set-buffer (get-buffer-create "*sdcv*")) 
-    (buffer-disable-undo) 
-    (erase-buffer) 
-    (let ((process (start-process-shell-command "sdcv" "*sdcv*" "sdcv" "-n" word))) 
-      (set-process-sentinel 
-	process 
-	(lambda (process signal) 
-	  (when (memq (process-status process) '(exit signal)) 
-	    (unless (string= (buffer-name) "*sdcv*") 
-	      (setq kid-sdcv-window-configuration (current-window-configuration)) 
-	      (switch-to-buffer-other-window "*sdcv*") 
-	      (local-set-key (kbd "d") 'kid-sdcv-to-buffer) 
-	      (local-set-key (kbd "q") (lambda () 
-					 (interactive) 
-					 (bury-buffer) 
-					 (unless (null (cdr (window-list))) ; only one window 
-					   (delete-window))))) 
-	    (goto-char (point-min))))))))
+(global-set-key (kbd "C-c s") 'kid-sdcv-to-buffer)
+(defun kid-sdcv-to-buffer ()
+  (interactive)
+  (let ((word (if mark-active
+                  (buffer-substring-no-properties (region-beginning) (region-end))
+		(current-word nil t))))
+    (setq word (read-string (format "Search the dictionary for (default %s): " word)
+			    nil nil word))
+    (set-buffer (get-buffer-create "*sdcv*"))
+    (buffer-disable-undo)
+    (erase-buffer)
+    (let ((process (start-process-shell-command "sdcv" "*sdcv*" "sdcv" "-n" word)))
+      (set-process-sentinel
+       process
+       (lambda (process signal)
+         (when (memq (process-status process) '(exit signal))
+           (unless (string= (buffer-name) "*sdcv*")
+             (setq kid-sdcv-window-configuration (current-window-configuration))
+             (switch-to-buffer-other-window "*sdcv*")
+             (local-set-key (kbd "d") 'kid-sdcv-to-buffer)
+             (local-set-key (kbd "q") (lambda ()
+                                        (interactive)
+                                        (bury-buffer)
+                                        (unless (null (cdr (window-list))) ; only one window
+                                          (delete-window)))))
+           (goto-char (point-min))))))))
 
 ;;;orgmode 自动折行
 ;orgmode的部分设置
@@ -97,3 +101,4 @@
 ;;设置主题
 (load-theme 'tangotango t)
 (provide 'init-local)
+;;; init-local.el ends here
