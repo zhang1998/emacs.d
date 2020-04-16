@@ -1,7 +1,15 @@
 ;;;  Code:
+;;c#
+(add-to-list 'load-path"/home/work/.emacs.d/elpa-26.3/csharp-mode")
+
+(autoload 'csharp-mode "csharp-mode"
+  "Major mode for editing C# code." t)
+(setq auto-mode-alist (cons '( "\\.cs\\'" . csharp-mode ) auto-mode-alist ))
+
+;;c补全
 (add-hook 'c++-mode-hook
           (lambda () (setq flycheck-clang-include-path
-                      (list (expand-file-name "~/local/include/")))))
+                       (list (expand-file-name "~/local/include/")))))
 
 
 ;;(add-to-list 'company-backends 'company-c-headers)
